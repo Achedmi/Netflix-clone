@@ -134,6 +134,7 @@ body {
   overflow-y: hidden;
   padding-top: 30px;
   padding-bottom: 30px;
+  column-gap: 10px;
 }
 .categorie::-webkit-scrollbar {
   height: 0;
@@ -141,7 +142,6 @@ body {
 .movie-card {
   height: 150px;
   min-width: 256px;
-  transition: 1s ease-out;
   position: relative;
 }
 .movie-image {
@@ -155,13 +155,11 @@ body {
 }
 
 .movie-card:hover .movie-image {
+  transition: 1s ease-in-out;
   cursor: pointer;
-  width: 350px;
-  height: 200px;
+  transform: scale(1.4);
   position: absolute;
-  top: -15px;
-  left: -20px;
   z-index: 999;
   box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.534);
-  transition: 0.9s;
+  transition: 1s;
 }
