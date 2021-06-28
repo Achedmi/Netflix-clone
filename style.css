@@ -113,17 +113,10 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 60px;
+  row-gap: 20px;
 }
-.categorie {
-  height: 150px;
-  display: flex;
-  column-gap: 2.5px;
-  padding-left: 100px;
-  overflow: auto;
-}
-.categorie::-webkit-scrollbar {
-  height: 0;
+.categorie-title {
+  position: relative;
 }
 .categorie-title::before {
   content: "New Release";
@@ -133,21 +126,42 @@ body {
   top: -30px;
   left: 100px;
 }
+.categorie {
+  display: flex;
+  padding-left: 100px;
+  padding-right: 100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.categorie::-webkit-scrollbar {
+  height: 0;
+}
 .movie-card {
-  height: 100%;
-  width: 250px;
+  height: 150px;
+  min-width: 256px;
+  transition: 1s ease-out;
+  position: relative;
 }
 .movie-image {
+  z-index: 99;
   width: 256px;
   height: 100%;
   background-image: url("https://seasonrush.com/wp-content/uploads/2021/03/Money-Heist-5.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   position: relative;
 }
-.movie-title {
+
+.movie-card:hover .movie-image {
+  cursor: pointer;
+  width: 350px;
+  height: 200px;
   position: absolute;
-  bottom: 5px;
-  left: 10px;
-  color: white;
+  top: -15px;
+  left: -20px;
+  z-index: 999;
+  box-shadow: 0 4px 100px 0 rgba(0, 0, 0, 0.534);
+  transition: 0.9s;
 }
